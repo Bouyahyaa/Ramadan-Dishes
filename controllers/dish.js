@@ -107,7 +107,7 @@ const selectProps = (...props) => {
 
 
 
-// The endpoint should respond with the dish which could be cooked after Asr :)
+// The endpoint should respond with random dish
 export const suggest = async (req, res) => {
     try {
         
@@ -119,7 +119,7 @@ export const suggest = async (req, res) => {
         if (!day) {
             res
                 .status(404)
-                .send("Enter a day number");
+                .send("Enter a valid day number");
         } else if (parseInt(day) > 30 || parseInt(day) < 1 || isNaN(parseInt(day))) {
 
             res
