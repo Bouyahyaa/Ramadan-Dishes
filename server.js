@@ -2,9 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
-import { createRequire } from "module";
-const require = createRequire(import.meta.url);
-
+import dishRoutes from "./routes/dish.js";
 
 mongoose.Promise = global.Promise;
 
@@ -12,8 +10,9 @@ const app = express();
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
+app.use("/cooktime" , dishRoutes);
 
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
 app.listen(PORT, () => {
   console.log(`Server Running on Port: http://localhost:${PORT}`);

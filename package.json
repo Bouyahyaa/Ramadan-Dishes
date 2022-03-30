@@ -9,5 +9,11 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "hijri": "^0.5.0",
+    "moment": "^2.29.1",
+    "node-navigator": "^1.0.1"
+  }
 }
